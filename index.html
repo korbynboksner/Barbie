@@ -1,96 +1,746 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta content="https://Barbellinaahub.com" property="og:url"/>
-<link href="https://Barbellinaahub.com" rel="canonical"/>
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+
+  <title>Barbellinaa</title>
+
+  <meta
+    name="description"
+    content="Barbellinaa — Model and Content Creator"
+  />
+
+  <meta property="og:title" content="Barbellinaa" />
+
+  <meta
+    property="og:description"
+    content="Model and Content Creator — Exclusive Content"
+  />
+
+  <meta
+    property="og:url"
+    content="https://barbellinaahub.com/"
+  />
+
+  <meta property="og:type" content="website" />
+
+  <meta
+    property="og:image"
+    content="https://cache.link.me/transformed/format%3Dwebp%2Cheight%3D1092%2Cquality%3D90%2Cwidth%3D1092/user-profile%252F1898286%252Ftmp-1365-1775090272194.png"
+  />
+
+  <link
+    rel="canonical"
+    href="https://barbellinaahub.com/"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
+    :root {
+      --navy: #071423;
+      --deep-blue: #102c55;
+      --blue: #2864b8;
+      --aqua: #54e8db;
+      --lavender: #ae8cff;
+
+      --card-bg: rgba(7, 21, 38, 0.62);
+      --card-border: rgba(190, 244, 255, 0.22);
+
+      --text-primary: #ffffff;
+      --text-secondary: rgba(230, 247, 255, 0.76);
+
+      --button-text: #09283b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--navy);
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0d0d0d;
-      color: white;
+      min-height: 100vh;
+      min-height: 100svh;
+      overflow-x: hidden;
+
+      font-family: "DM Sans", sans-serif;
+      color: var(--text-primary);
       text-align: center;
+
+      background:
+        radial-gradient(
+          circle at 15% 15%,
+          rgba(84, 232, 219, 0.34),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 88% 72%,
+          rgba(174, 140, 255, 0.34),
+          transparent 34%
+        ),
+        radial-gradient(
+          circle at 55% 0%,
+          rgba(40, 100, 184, 0.5),
+          transparent 42%
+        ),
+        linear-gradient(
+          155deg,
+          #071423 0%,
+          #102c55 48%,
+          #281f56 100%
+        );
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+
+      background-image:
+        radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.7) 1px,
+          transparent 1.5px
+        );
+
+      background-size: 54px 54px;
+      opacity: 0.16;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          circle at center,
+          transparent 25%,
+          rgba(2, 7, 18, 0.42) 100%
+        );
+    }
+
+    .background {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .orb {
+      position: absolute;
+      bottom: -180px;
+      border-radius: 50%;
+      opacity: 0;
+
+      border: 1px solid rgba(197, 249, 255, 0.28);
+
+      background:
+        radial-gradient(
+          circle at 28% 24%,
+          rgba(255, 255, 255, 0.68),
+          rgba(84, 232, 219, 0.16) 25%,
+          rgba(40, 100, 184, 0.13) 55%,
+          rgba(174, 140, 255, 0.18) 100%
+        );
+
+      box-shadow:
+        inset 0 0 22px rgba(255, 255, 255, 0.16),
+        0 0 35px rgba(84, 232, 219, 0.12);
+
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+
+      animation:
+        rise var(--duration) linear infinite,
+        drift var(--drift-duration) ease-in-out infinite alternate;
+
+      animation-delay: var(--delay);
+    }
+
+    .orb::after {
+      content: "";
+      position: absolute;
+      top: 17%;
+      left: 20%;
+      width: 28%;
+      height: 14%;
+      border-radius: 50%;
+
+      background: rgba(255, 255, 255, 0.52);
+      filter: blur(2px);
+      transform: rotate(-32deg);
+    }
+
+    .orb:nth-child(1) {
+      left: 3%;
+      width: 86px;
+      height: 86px;
+      --duration: 19s;
+      --drift-duration: 5s;
+      --delay: -8s;
+    }
+
+    .orb:nth-child(2) {
+      left: 16%;
+      width: 38px;
+      height: 38px;
+      --duration: 14s;
+      --drift-duration: 3.5s;
+      --delay: -3s;
+    }
+
+    .orb:nth-child(3) {
+      left: 28%;
+      width: 132px;
+      height: 132px;
+      --duration: 25s;
+      --drift-duration: 7s;
+      --delay: -16s;
+    }
+
+    .orb:nth-child(4) {
+      left: 43%;
+      width: 56px;
+      height: 56px;
+      --duration: 16s;
+      --drift-duration: 4s;
+      --delay: -11s;
+    }
+
+    .orb:nth-child(5) {
+      left: 57%;
+      width: 92px;
+      height: 92px;
+      --duration: 21s;
+      --drift-duration: 5.5s;
+      --delay: -5s;
+    }
+
+    .orb:nth-child(6) {
+      left: 71%;
+      width: 42px;
+      height: 42px;
+      --duration: 15s;
+      --drift-duration: 4s;
+      --delay: -10s;
+    }
+
+    .orb:nth-child(7) {
+      left: 81%;
+      width: 148px;
+      height: 148px;
+      --duration: 28s;
+      --drift-duration: 8s;
+      --delay: -20s;
+    }
+
+    .orb:nth-child(8) {
+      left: 93%;
+      width: 64px;
+      height: 64px;
+      --duration: 18s;
+      --drift-duration: 4.5s;
+      --delay: -7s;
+    }
+
+    .orb:nth-child(9) {
+      left: 9%;
+      width: 25px;
+      height: 25px;
+      --duration: 12s;
+      --drift-duration: 3s;
+      --delay: -4s;
+    }
+
+    .orb:nth-child(10) {
+      left: 63%;
+      width: 30px;
+      height: 30px;
+      --duration: 13s;
+      --drift-duration: 3.2s;
+      --delay: -9s;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scale(0.86);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.56;
+      }
+
+      82% {
+        opacity: 0.56;
+      }
+
+      100% {
+        transform:
+          translateY(calc(-100vh - 340px))
+          scale(1.08);
+
+        opacity: 0;
+      }
+    }
+
+    @keyframes drift {
+      from {
+        margin-left: -25px;
+      }
+
+      to {
+        margin-left: 32px;
+      }
     }
 
     .page {
+      position: relative;
+      z-index: 2;
+
       min-height: 100vh;
-      padding: 40px 20px;
+      min-height: 100svh;
+
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+
+      padding:
+        max(30px, env(safe-area-inset-top))
+        18px
+        max(30px, env(safe-area-inset-bottom));
     }
 
     .card {
-      width: 100%;
-      max-width: 460px;
-      background: #181818;
-      border-radius: 24px;
-      padding: 28px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      position: relative;
+      width: min(100%, 470px);
+      padding: 35px 27px 29px;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0.025)
+        ),
+        var(--card-bg);
+
+      border: 1px solid var(--card-border);
+      border-radius: 34px;
+
+      box-shadow:
+        0 30px 90px rgba(0, 4, 16, 0.52),
+        0 0 60px rgba(84, 232, 219, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -170px;
+      left: -90px;
+
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      pointer-events: none;
+
+      background: rgba(84, 232, 219, 0.11);
+      filter: blur(10px);
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      bottom: -180px;
+
+      width: 290px;
+      height: 290px;
+      border-radius: 50%;
+      pointer-events: none;
+
+      background: rgba(174, 140, 255, 0.1);
+      filter: blur(12px);
+    }
+
+    .profile-frame {
+      position: relative;
+      z-index: 1;
+
+      width: 138px;
+      height: 138px;
+      margin: 0 auto 21px;
+      padding: 4px;
+
+      border-radius: 38px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(84, 232, 219, 0.98),
+          rgba(255, 255, 255, 0.9),
+          rgba(174, 140, 255, 0.98)
+        );
+
+      box-shadow:
+        0 16px 38px rgba(0, 7, 24, 0.45),
+        0 0 36px rgba(84, 232, 219, 0.18);
+
+      transform: rotate(-2deg);
     }
 
     .profile-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      border-radius: 34px;
       object-fit: cover;
-      margin-bottom: 16px;
+
+      border: 3px solid rgba(7, 20, 35, 0.86);
+      background: #102c55;
+    }
+
+    .profile-frame::after {
+      content: "✦";
+      position: absolute;
+      right: -6px;
+      bottom: 7px;
+
+      width: 33px;
+      height: 33px;
+      border-radius: 50%;
+
+      display: grid;
+      place-items: center;
+
+      color: #0a2a3b;
+      background: var(--aqua);
+
+      border: 4px solid #102137;
+
+      font-size: 0.88rem;
+      font-weight: 700;
+
+      box-shadow:
+        0 0 17px rgba(84, 232, 219, 0.72);
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
     }
 
     h1 {
       margin: 0;
-      font-size: 2rem;
+
+      font-family: "Unbounded", sans-serif;
+      font-size: clamp(1.75rem, 7vw, 2.35rem);
+      font-weight: 700;
+      letter-spacing: -0.05em;
+
+      text-shadow:
+        0 6px 22px rgba(0, 4, 18, 0.48);
     }
 
-    p {
-      color: #cfcfcf;
-      margin-bottom: 24px;
+    .handle {
+      display: inline-block;
+      margin-top: 8px;
+
+      color: rgba(185, 244, 255, 0.66);
+
+      font-size: 0.93rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .bio {
+      max-width: 350px;
+      margin: 18px auto 26px;
+
+      color: var(--text-secondary);
+
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+
+    .links {
+      display: grid;
+      gap: 13px;
     }
 
     .link-button {
-      display: block;
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       width: 100%;
-      padding: 16px;
-      margin: 12px 0;
-      border-radius: 14px;
-      background: white;
-      color: black;
+      min-height: 59px;
+      padding: 15px 50px;
+
+      overflow: hidden;
+
+      border: 1px solid rgba(215, 255, 252, 0.84);
+      border-radius: 18px;
+
+      color: var(--button-text);
+
+      background:
+        linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #bffaf4 52%,
+          #c8b8ff 100%
+        );
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
       text-decoration: none;
-      font-weight: bold;
-      transition: transform 0.15s ease, opacity 0.15s ease;
+
+      box-shadow:
+        0 13px 32px rgba(0, 7, 23, 0.3),
+        0 0 24px rgba(84, 232, 219, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+      transform: translateZ(0);
+
+      transition:
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        filter 180ms ease;
+    }
+
+    .link-button::before {
+      content: "";
+      position: absolute;
+      top: -60%;
+      left: -70%;
+
+      width: 38%;
+      height: 220%;
+
+      background: rgba(255, 255, 255, 0.62);
+
+      transform: rotate(28deg);
+      transition: left 550ms ease;
+    }
+
+    .link-button::after {
+      content: "↗";
+      position: absolute;
+      right: 20px;
+      top: 50%;
+
+      color: rgba(9, 40, 59, 0.65);
+
+      font-size: 1.2rem;
+      font-weight: 700;
+
+      transform: translateY(-50%);
+
+      transition:
+        transform 180ms ease;
     }
 
     .link-button:hover {
-      transform: scale(1.03);
-      opacity: 0.9;
+      transform:
+        translateY(-3px)
+        scale(1.012);
+
+      filter: brightness(1.04);
+
+      box-shadow:
+        0 18px 38px rgba(0, 7, 23, 0.4),
+        0 0 30px rgba(84, 232, 219, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 1);
+    }
+
+    .link-button:hover::before {
+      left: 135%;
+    }
+
+    .link-button:hover::after {
+      transform:
+        translate(3px, -3px);
+    }
+
+    .link-button:active {
+      transform: scale(0.985);
+    }
+
+    .link-button:focus-visible {
+      outline: 3px solid rgba(84, 232, 219, 0.8);
+      outline-offset: 4px;
+    }
+
+    .footer {
+      margin: 23px 0 0;
+
+      color: rgba(202, 235, 245, 0.42);
+
+      font-size: 0.74rem;
+      letter-spacing: 0.04em;
     }
 
     @media (min-width: 768px) {
+      .card {
+        padding: 43px 39px 33px;
+      }
+    }
+
+    @media (max-width: 420px) {
       .page {
-        padding: 80px;
+        padding-left: 13px;
+        padding-right: 13px;
       }
 
       .card {
-        max-width: 560px;
-        padding: 40px;
+        padding: 30px 20px 25px;
+        border-radius: 28px;
       }
 
-      h1 {
-        font-size: 2.6rem;
+      .profile-frame {
+        width: 120px;
+        height: 120px;
+        border-radius: 32px;
+      }
+
+      .profile-img {
+        border-radius: 28px;
+      }
+
+      .bio {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .orb {
+        animation: none;
+        opacity: 0.22;
+      }
+
+      .orb:nth-child(1) {
+        top: 8%;
+        bottom: auto;
+      }
+
+      .orb:nth-child(3) {
+        top: 62%;
+        bottom: auto;
+      }
+
+      .orb:nth-child(5) {
+        top: 34%;
+        bottom: auto;
+      }
+
+      .orb:nth-child(7) {
+        top: 76%;
+        bottom: auto;
+      }
+
+      .link-button,
+      .link-button::before,
+      .link-button::after {
+        transition: none;
       }
     }
   </style>
 </head>
 
 <body>
+  <div class="background" aria-hidden="true">
+    <span class="orb"></span>
+    <span class="orb"></span>
+    <span class="orb"></span>
+    <span class="orb"></span>
+    <span class="orb"></span>
+    <span class="orb"></span>
+    <span class="orb"></span>
+    <span class="orb"></span>
+    <span class="orb"></span>
+    <span class="orb"></span>
+  </div>
+
   <main class="page">
     <section class="card">
-      <img class="profile-img" src="https://cache.link.me/transformed/format%3Dwebp%2Cheight%3D1092%2Cquality%3D90%2Cwidth%3D1092/user-profile%252F1898286%252Ftmp-1365-1775090272194.png" alt="Jelly Bean Xoo profile photo" />
+      <div class="profile-frame">
+        <img
+          class="profile-img"
+          src="https://cache.link.me/transformed/format%3Dwebp%2Cheight%3D1092%2Cquality%3D90%2Cwidth%3D1092/user-profile%252F1898286%252Ftmp-1365-1775090272194.png"
+          alt="Barbellinaa profile photo"
+        />
+      </div>
 
-      <h1>Barbellinaa</h1>
-      <p>Model & Content Creator — Exclusive Content</p>
+      <div class="content">
+        <h1>Barbellinaa</h1>
 
-      <a class="link-button" href="https://link.me/barbellinaa">Exclusive Content</a>
+        <span class="handle">
+          @barbellinaa
+        </span>
+
+        <p class="bio">
+          Model &amp; Content Creator<br />
+          Come see my exclusive side ✦
+        </p>
+
+        <nav
+          class="links"
+          aria-label="Barbellinaa links"
+        >
+          <a
+            class="link-button"
+            href="https://link.me/barbellinaa"
+            rel="noopener noreferrer"
+          >
+            Exclusive Content
+          </a>
+        </nav>
+
+        <p class="footer">
+          © 2026 Barbellinaa
+        </p>
+      </div>
     </section>
   </main>
 </body>
 </html>
+```
